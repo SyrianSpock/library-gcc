@@ -84,7 +84,7 @@ TEST_F(PatronAccessTest, FindByNameReturnsChronologicallyFirstMatch) {
 }
 
 TEST_F(PatronAccessTest, UpdatePersistsChanges) {
-    auto cardNumber{"p10"};
+    auto cardNumber = "p10";
     Patron patron1("x", cardNumber);
     access.save(patron1);
     int fine = 100;

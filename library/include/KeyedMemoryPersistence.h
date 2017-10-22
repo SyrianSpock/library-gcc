@@ -41,12 +41,12 @@ public:
     }
 
     virtual bool matches(MatcherFunction matches, const std::string& name) const {
-        auto it{std::find_if(mData.begin(), mData.end(),
+        auto it = std::find_if(mData.begin(), mData.end(),
                 [&] (const std::pair<std::string,Serializable*>& p) {
                     Serializable* object = p.second;
                     if (matches(*object, name))
                         return true;
-                })};
+                });
         return it != mData.end();
     }
 

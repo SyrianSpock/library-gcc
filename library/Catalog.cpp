@@ -48,8 +48,8 @@ bool Catalog::contains(const string& barcode) const {
 }
 
 Holding Catalog::findByBarCode(const string& barcode) const {
-    auto it{find_if(Catalog::holdings()->begin(), Catalog::holdings()->end(), 
-        [&](const Holding& h) { return barcode == h.barcode(); })};
+    auto it = find_if(Catalog::holdings()->begin(), Catalog::holdings()->end(),
+        [&](const Holding& h) { return barcode == h.barcode(); });
     return Holding{*it};
 }
 

@@ -38,8 +38,8 @@ bool PatronAccess::find(Patron& patron) const {
 }
 
 Patron PatronAccess::findByCardNumber(const string& cardNumber) const {
-    auto it{find_if(PatronAccess::patrons()->begin(), PatronAccess::patrons()->end(), 
-        [&](const Patron& p) { return cardNumber == p.cardNumber(); })};
+    auto it = find_if(PatronAccess::patrons()->begin(), PatronAccess::patrons()->end(),
+        [&](const Patron& p) { return cardNumber == p.cardNumber(); });
     return Patron{*it};
 }
 
